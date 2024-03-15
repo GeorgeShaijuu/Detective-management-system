@@ -110,5 +110,7 @@ Public Class Form2
         End Try
     End Function
 
-
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Form3.Show()
+    End Sub
 End Class
