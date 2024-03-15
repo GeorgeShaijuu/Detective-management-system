@@ -7,7 +7,7 @@ Public Class Form3
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load client IDs into Guna2ComboBox1
         LoadClientIDs()
-
+        LoadCasesData()
         ' Load predefined specialization options into Guna2ComboBox2
         Guna2ComboBox2.Items.Add("Surveillance")
         Guna2ComboBox2.Items.Add("Cybercrime")
@@ -77,10 +77,10 @@ Public Class Form3
 
     Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
         ' Retrieve selected values from combo boxes
-        Dim clientID As Integer = Convert.ToInt32(Guna2ComboBox1.SelectedItem)
-        Dim genre As String = Guna2ComboBox2.SelectedItem.ToString()
-        Dim detectiveName As String = Guna2ComboBox3.SelectedItem.ToString()
-        Dim status As String = Guna2ComboBox4.SelectedItem.ToString()
+        Dim clientID = Convert.ToInt32(Guna2ComboBox1.SelectedItem)
+        Dim genre = Guna2ComboBox2.SelectedItem.ToString
+        Dim detectiveName = Guna2ComboBox3.SelectedItem.ToString
+        Dim status = Guna2ComboBox4.SelectedItem.ToString
 
         ' Insert case data into the database
         If InsertCaseData(clientID, genre, detectiveName, status) Then
@@ -143,4 +143,14 @@ Public Class Form3
             Return -1 ' Return -1 if an exception occurred
         End Try
     End Function
+    Private Sub LoadCasesData()
+        Dim query As String = "SELECT * FROM cases"
+        Using connection As New MySqlConnection(connectionString)
+            Using adapter As New MySqlDataAdapter(query, connection)
+                Dim dataset As New DataSet()
+                adapter.Fill(dataset)
+                Guna2DataGridView1.DataSource = dataset.Tables(0)
+            End Using
+        End Using
+    End Sub
 End Class
