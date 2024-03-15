@@ -129,7 +129,7 @@ Partial Class Form2
         Guna2Button5.ForeColor = Color.White
         Guna2Button5.Image = My.Resources.Resources.icons8_logout_50
         Guna2Button5.ImageSize = New Size(25, 25)
-        Guna2Button5.Location = New Point(11, 437)
+        Guna2Button5.Location = New Point(10, 305)
         Guna2Button5.Name = "Guna2Button5"
         Guna2Button5.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         Guna2Button5.Size = New Size(40, 45)
@@ -564,7 +564,7 @@ Partial Class Form2
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(213), CByte(218), CByte(223))
-        ClientSize = New Size(903, 513)
+        ClientSize = New Size(814, 374)
         Controls.Add(Guna2GroupBox3)
         Controls.Add(Guna2GroupBox2)
         Controls.Add(Guna2GroupBox1)
