@@ -25,6 +25,8 @@ Partial Class Form2
         components = New ComponentModel.Container()
         Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -59,16 +61,16 @@ Partial Class Form2
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Guna2Button6 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Label10 = New Label()
         Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
         Label4 = New Label()
         Label3 = New Label()
@@ -79,6 +81,7 @@ Partial Class Form2
         Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Label5 = New Label()
         Guna2TextBox9 = New Guna.UI2.WinForms.Guna2TextBox()
         Label9 = New Label()
         Guna2GradientButton2 = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -88,9 +91,6 @@ Partial Class Form2
         Guna2TextBox6 = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2TextBox7 = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2TextBox8 = New Guna.UI2.WinForms.Guna2TextBox()
-        Guna2Button6 = New Guna.UI2.WinForms.Guna2Button()
-        Label5 = New Label()
-        Label10 = New Label()
         Guna2GroupBox1.SuspendLayout()
         Guna2GroupBox2.SuspendLayout()
         Guna2GroupBox3.SuspendLayout()
@@ -121,6 +121,25 @@ Partial Class Form2
         Guna2GroupBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges38
         Guna2GroupBox1.Size = New Size(63, 498)
         Guna2GroupBox1.TabIndex = 0
+        ' 
+        ' Guna2Button6
+        ' 
+        Guna2Button6.BackColor = Color.White
+        Guna2Button6.CustomizableEdges = CustomizableEdges25
+        Guna2Button6.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button6.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button6.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button6.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button6.FillColor = Color.FromArgb(CByte(0), CByte(0), CByte(0), CByte(255))
+        Guna2Button6.Font = New Font("Segoe UI", 9F)
+        Guna2Button6.ForeColor = Color.White
+        Guna2Button6.Image = My.Resources.Resources.icons8_case_32
+        Guna2Button6.ImageSize = New Size(25, 25)
+        Guna2Button6.Location = New Point(11, 230)
+        Guna2Button6.Name = "Guna2Button6"
+        Guna2Button6.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        Guna2Button6.Size = New Size(40, 45)
+        Guna2Button6.TabIndex = 6
         ' 
         ' Guna2Button5
         ' 
@@ -240,6 +259,17 @@ Partial Class Form2
         Guna2GroupBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         Guna2GroupBox2.Size = New Size(380, 489)
         Guna2GroupBox2.TabIndex = 1
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.BackColor = Color.White
+        Label10.Font = New Font("Segoe UI", 24F)
+        Label10.Location = New Point(137, 35)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(102, 45)
+        Label10.TabIndex = 15
+        Label10.Text = "Client"
         ' 
         ' Guna2GradientButton1
         ' 
@@ -419,6 +449,17 @@ Partial Class Form2
         Guna2GroupBox3.Size = New Size(416, 489)
         Guna2GroupBox3.TabIndex = 11
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Segoe UI", 24F)
+        Label5.Location = New Point(106, 35)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(221, 45)
+        Label5.TabIndex = 14
+        Label5.Text = "Add Detective"
+        ' 
         ' Guna2TextBox9
         ' 
         Guna2TextBox9.BackColor = Color.White
@@ -573,53 +614,12 @@ Partial Class Form2
         Guna2TextBox8.Size = New Size(256, 40)
         Guna2TextBox8.TabIndex = 2
         ' 
-        ' Guna2Button6
-        ' 
-        Guna2Button6.BackColor = Color.White
-        Guna2Button6.CustomizableEdges = CustomizableEdges25
-        Guna2Button6.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button6.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button6.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button6.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button6.FillColor = Color.FromArgb(CByte(0), CByte(0), CByte(0), CByte(255))
-        Guna2Button6.Font = New Font("Segoe UI", 9F)
-        Guna2Button6.ForeColor = Color.White
-        Guna2Button6.Image = My.Resources.Resources.icons8_case_32
-        Guna2Button6.ImageSize = New Size(25, 25)
-        Guna2Button6.Location = New Point(11, 230)
-        Guna2Button6.Name = "Guna2Button6"
-        Guna2Button6.ShadowDecoration.CustomizableEdges = CustomizableEdges26
-        Guna2Button6.Size = New Size(40, 45)
-        Guna2Button6.TabIndex = 6
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.White
-        Label5.Font = New Font("Segoe UI", 24F)
-        Label5.Location = New Point(106, 35)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(221, 45)
-        Label5.TabIndex = 14
-        Label5.Text = "Add Detective"
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.BackColor = Color.White
-        Label10.Font = New Font("Segoe UI", 24F)
-        Label10.Location = New Point(137, 35)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(102, 45)
-        Label10.TabIndex = 15
-        Label10.Text = "Client"
-        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(213), CByte(218), CByte(223))
-        ClientSize = New Size(814, 374)
+        ClientSize = New Size(900, 518)
         Controls.Add(Guna2GroupBox3)
         Controls.Add(Guna2GroupBox2)
         Controls.Add(Guna2GroupBox1)
