@@ -131,7 +131,7 @@ Partial Class Form1
         Guna2GradientButton1.DisabledState.FillColor2 = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Guna2GradientButton1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         Guna2GradientButton1.FillColor = Color.Black
-        Guna2GradientButton1.FillColor2 = Color.White
+        Guna2GradientButton1.FillColor2 = SystemColors.WindowText
         Guna2GradientButton1.Font = New Font("Segoe UI", 9F)
         Guna2GradientButton1.ForeColor = Color.White
         Guna2GradientButton1.GradientMode = Drawing2D.LinearGradientMode.ForwardDiagonal
