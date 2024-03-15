@@ -12,7 +12,7 @@ Public Class Form1
         ' Check credentials
         If AuthenticateUser(username, password) Then
             MessageBox.Show("Login Successful!")
-            ' Proceed to the next part of your application
+            Form2.Show()
         Else
             MessageBox.Show("Invalid Username or Password.")
         End If
