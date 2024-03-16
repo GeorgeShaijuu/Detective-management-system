@@ -113,4 +113,42 @@ Public Class Form2
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         Form3.Show()
     End Sub
+
+    Private Sub Guna2Button6_Click(sender As Object, e As EventArgs) Handles Guna2Button6.Click
+        ' Connection string to connect to your database
+        Dim connectionString As String = "server=localhost; user=root; password=admin; database=dam;"
+
+        ' SQL query to select data from the report table
+        Dim query As String = "SELECT * FROM report"
+
+        ' Variable to hold the message that will be displayed in the message box
+        Dim message As String = "Report Table Data:" & Environment.NewLine
+
+        Using connection As New MySqlConnection(connectionString)
+            ' Open the connection to the database
+            connection.Open()
+
+            ' Create a new command with the query and connection
+            Using command As New MySqlCommand(query, connection)
+                ' Execute the query and obtain a reader to read the results
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    ' Check if there are rows
+                    If reader.HasRows Then
+                        ' Loop through all the rows
+                        While reader.Read()
+                            ' Append each row's data to the message
+                            ' Assuming the report table has columns caseid, client_id, decid
+                            ' Adjust the column names as per your actual table structure
+                            message &= $"Case ID: {reader("caseid")}, Client ID: {reader("client_id")}, Detective ID: {reader("decid")}" & Environment.NewLine
+                        End While
+                    Else
+                        message = "No data found in the report table."
+                    End If
+                End Using
+            End Using
+        End Using
+
+        ' Show the message box with the data
+        MessageBox.Show(message)
+    End Sub
 End Class

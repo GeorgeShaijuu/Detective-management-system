@@ -5,6 +5,8 @@ Public Class Form3
     Private connectionString As String = "server=localhost;user=root;password=admin;database=dam;"
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2GroupBox2.Visible = False
+        Guna2GroupBox3.Visible = False
         ' Load client IDs into Guna2ComboBox1
         LoadClientIDs()
         LoadCasesData()
@@ -143,6 +145,7 @@ Public Class Form3
             Return -1 ' Return -1 if an exception occurred
         End Try
     End Function
+
     Private Sub LoadCasesData()
         Dim query As String = "SELECT * FROM cases"
         Using connection As New MySqlConnection(connectionString)
@@ -152,5 +155,68 @@ Public Class Form3
                 Guna2DataGridView1.DataSource = dataset.Tables(0)
             End Using
         End Using
+    End Sub
+
+    Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
+        ' Make sure a row is selected in the DataGridView
+        If Guna2DataGridView1.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a case from the list.")
+            Return
+        End If
+
+        ' Assuming caseid is in the first column of the DataGridView
+        Dim selectedRow As DataGridViewRow = Guna2DataGridView1.SelectedRows(0)
+        ' Assuming caseid is in the first column of the DataGridView
+        Dim caseid As Integer = Convert.ToInt32(selectedRow.Cells("clientID").Value)
+        Dim client_id As Integer = Convert.ToInt32(selectedRow.Cells("clientID").Value)
+        Dim decid As Integer = Convert.ToInt32(selectedRow.Cells("detectiveID").Value)
+
+        ' Insert into booking table
+        InsertIntoBooking(caseid, client_id, decid)
+    End Sub
+
+    Private Sub InsertIntoBooking(caseid As Integer, client_id As Integer, decid As Integer)
+        ' Your connection string
+        Dim connectionString As String = "server=localhost;user=root;password=admin;database=dam;"
+
+        Using connection As New MySqlConnection(connectionString)
+            ' Open the connection
+            connection.Open()
+
+            ' SQL query to insert into booking
+            Dim query As String = "INSERT INTO booking (caseid, client_id, decid) VALUES (@caseid, @client_id, @decid)"
+
+            ' Execute the query
+            Using command As New MySqlCommand(query, connection)
+                ' Add the parameters and their values
+                command.Parameters.AddWithValue("@caseid", caseid)
+                command.Parameters.AddWithValue("@client_id", client_id)
+                command.Parameters.AddWithValue("@decid", decid)
+
+                ' Execute the command
+                command.ExecuteNonQuery()
+            End Using
+        End Using
+
+        MessageBox.Show("Booking added successfully.")
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Guna2GroupBox2.Visible = True
+        Guna2GroupBox3.Visible = False
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Guna2GroupBox2.Visible = False
+        Guna2GroupBox3.Visible = True
+    End Sub
+
+    Private Sub Guna2Button6_Click(sender As Object, e As EventArgs) Handles Guna2Button6.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        Me.Close()
+        Form2.Close()
     End Sub
 End Class
