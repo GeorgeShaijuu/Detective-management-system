@@ -149,6 +149,7 @@ Public Class Form3
     Private Sub LoadCasesData()
         Dim query As String = "SELECT * FROM cases"
         Using connection As New MySqlConnection(connectionString)
+
             Using adapter As New MySqlDataAdapter(query, connection)
                 Dim dataset As New DataSet()
                 adapter.Fill(dataset)
