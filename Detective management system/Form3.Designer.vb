@@ -107,11 +107,10 @@ Partial Class Form3
         Guna2GroupBox2.CustomizableEdges = CustomizableEdges27
         Guna2GroupBox2.Font = New Font("Segoe UI", 9F)
         Guna2GroupBox2.ForeColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
-        Guna2GroupBox2.Location = New Point(91, 15)
-        Guna2GroupBox2.Margin = New Padding(3, 4, 3, 4)
+        Guna2GroupBox2.Location = New Point(80, 11)
         Guna2GroupBox2.Name = "Guna2GroupBox2"
         Guna2GroupBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges28
-        Guna2GroupBox2.Size = New Size(442, 654)
+        Guna2GroupBox2.Size = New Size(387, 490)
         Guna2GroupBox2.TabIndex = 2
         ' 
         ' Label10
@@ -119,9 +118,9 @@ Partial Class Form3
         Label10.AutoSize = True
         Label10.BackColor = Color.White
         Label10.Font = New Font("Segoe UI", 24F)
-        Label10.Location = New Point(110, 49)
+        Label10.Location = New Point(96, 37)
         Label10.Name = "Label10"
-        Label10.Size = New Size(222, 54)
+        Label10.Size = New Size(181, 45)
         Label10.TabIndex = 19
         Label10.Text = "Select Case"
         ' 
@@ -130,9 +129,9 @@ Partial Class Form3
         Label4.AutoSize = True
         Label4.BackColor = Color.White
         Label4.Font = New Font("Segoe UI", 12F)
-        Label4.Location = New Point(47, 418)
+        Label4.Location = New Point(41, 314)
         Label4.Name = "Label4"
-        Label4.Size = New Size(122, 28)
+        Label4.Size = New Size(97, 21)
         Label4.TabIndex = 18
         Label4.Text = "Select Status"
         ' 
@@ -148,11 +147,10 @@ Partial Class Form3
         Guna2ComboBox4.Font = New Font("Segoe UI", 10F)
         Guna2ComboBox4.ForeColor = Color.FromArgb(CByte(68), CByte(88), CByte(112))
         Guna2ComboBox4.ItemHeight = 30
-        Guna2ComboBox4.Location = New Point(47, 449)
-        Guna2ComboBox4.Margin = New Padding(3, 4, 3, 4)
+        Guna2ComboBox4.Location = New Point(41, 337)
         Guna2ComboBox4.Name = "Guna2ComboBox4"
         Guna2ComboBox4.ShadowDecoration.CustomizableEdges = CustomizableEdges18
-        Guna2ComboBox4.Size = New Size(348, 36)
+        Guna2ComboBox4.Size = New Size(305, 36)
         Guna2ComboBox4.TabIndex = 17
         ' 
         ' Label3
@@ -160,9 +158,9 @@ Partial Class Form3
         Label3.AutoSize = True
         Label3.BackColor = Color.White
         Label3.Font = New Font("Segoe UI", 12F)
-        Label3.Location = New Point(47, 333)
+        Label3.Location = New Point(41, 250)
         Label3.Name = "Label3"
-        Label3.Size = New Size(151, 28)
+        Label3.Size = New Size(119, 21)
         Label3.TabIndex = 16
         Label3.Text = "Select Detective"
         ' 
@@ -171,9 +169,9 @@ Partial Class Form3
         Label2.AutoSize = True
         Label2.BackColor = Color.White
         Label2.Font = New Font("Segoe UI", 12F)
-        Label2.Location = New Point(47, 248)
+        Label2.Location = New Point(41, 186)
         Label2.Name = "Label2"
-        Label2.Size = New Size(64, 28)
+        Label2.Size = New Size(52, 21)
         Label2.TabIndex = 15
         Label2.Text = "Genre"
         ' 
@@ -182,9 +180,9 @@ Partial Class Form3
         Label1.AutoSize = True
         Label1.BackColor = Color.White
         Label1.Font = New Font("Segoe UI", 12F)
-        Label1.Location = New Point(47, 160)
+        Label1.Location = New Point(41, 120)
         Label1.Name = "Label1"
-        Label1.Size = New Size(119, 28)
+        Label1.Size = New Size(95, 21)
         Label1.TabIndex = 14
         Label1.Text = "Select Client"
         ' 
@@ -200,11 +198,10 @@ Partial Class Form3
         Guna2ComboBox3.Font = New Font("Segoe UI", 10F)
         Guna2ComboBox3.ForeColor = Color.FromArgb(CByte(68), CByte(88), CByte(112))
         Guna2ComboBox3.ItemHeight = 30
-        Guna2ComboBox3.Location = New Point(47, 365)
-        Guna2ComboBox3.Margin = New Padding(3, 4, 3, 4)
+        Guna2ComboBox3.Location = New Point(41, 274)
         Guna2ComboBox3.Name = "Guna2ComboBox3"
         Guna2ComboBox3.ShadowDecoration.CustomizableEdges = CustomizableEdges20
-        Guna2ComboBox3.Size = New Size(348, 36)
+        Guna2ComboBox3.Size = New Size(305, 36)
         Guna2ComboBox3.TabIndex = 13
         ' 
         ' Guna2ComboBox2
@@ -219,11 +216,10 @@ Partial Class Form3
         Guna2ComboBox2.Font = New Font("Segoe UI", 10F)
         Guna2ComboBox2.ForeColor = Color.FromArgb(CByte(68), CByte(88), CByte(112))
         Guna2ComboBox2.ItemHeight = 30
-        Guna2ComboBox2.Location = New Point(47, 280)
-        Guna2ComboBox2.Margin = New Padding(3, 4, 3, 4)
+        Guna2ComboBox2.Location = New Point(41, 210)
         Guna2ComboBox2.Name = "Guna2ComboBox2"
         Guna2ComboBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges22
-        Guna2ComboBox2.Size = New Size(348, 36)
+        Guna2ComboBox2.Size = New Size(305, 36)
         Guna2ComboBox2.TabIndex = 12
         ' 
         ' Guna2ComboBox1
@@ -238,11 +234,10 @@ Partial Class Form3
         Guna2ComboBox1.Font = New Font("Segoe UI", 10F)
         Guna2ComboBox1.ForeColor = Color.FromArgb(CByte(68), CByte(88), CByte(112))
         Guna2ComboBox1.ItemHeight = 30
-        Guna2ComboBox1.Location = New Point(47, 193)
-        Guna2ComboBox1.Margin = New Padding(3, 4, 3, 4)
+        Guna2ComboBox1.Location = New Point(41, 145)
         Guna2ComboBox1.Name = "Guna2ComboBox1"
         Guna2ComboBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges24
-        Guna2ComboBox1.Size = New Size(348, 36)
+        Guna2ComboBox1.Size = New Size(305, 36)
         Guna2ComboBox1.TabIndex = 11
         ' 
         ' Guna2GradientButton1
@@ -259,11 +254,10 @@ Partial Class Form3
         Guna2GradientButton1.Font = New Font("Segoe UI", 9F)
         Guna2GradientButton1.ForeColor = Color.White
         Guna2GradientButton1.GradientMode = Drawing2D.LinearGradientMode.ForwardDiagonal
-        Guna2GradientButton1.Location = New Point(69, 542)
-        Guna2GradientButton1.Margin = New Padding(3, 4, 3, 4)
+        Guna2GradientButton1.Location = New Point(60, 406)
         Guna2GradientButton1.Name = "Guna2GradientButton1"
         Guna2GradientButton1.ShadowDecoration.CustomizableEdges = CustomizableEdges26
-        Guna2GradientButton1.Size = New Size(302, 53)
+        Guna2GradientButton1.Size = New Size(264, 40)
         Guna2GradientButton1.TabIndex = 10
         Guna2GradientButton1.Text = "Add"
         ' 
@@ -279,11 +273,10 @@ Partial Class Form3
         Guna2GroupBox1.CustomizableEdges = CustomizableEdges15
         Guna2GroupBox1.Font = New Font("Segoe UI", 9F)
         Guna2GroupBox1.ForeColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
-        Guna2GroupBox1.Location = New Point(9, 11)
-        Guna2GroupBox1.Margin = New Padding(3, 4, 3, 4)
+        Guna2GroupBox1.Location = New Point(8, 8)
         Guna2GroupBox1.Name = "Guna2GroupBox1"
         Guna2GroupBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges16
-        Guna2GroupBox1.Size = New Size(72, 664)
+        Guna2GroupBox1.Size = New Size(63, 498)
         Guna2GroupBox1.TabIndex = 3
         ' 
         ' Guna2Button6
@@ -299,11 +292,10 @@ Partial Class Form3
         Guna2Button6.ForeColor = Color.White
         Guna2Button6.Image = My.Resources.Resources._556720ca_ca70_4e2b_b695_5453e53bb3de
         Guna2Button6.ImageSize = New Size(25, 25)
-        Guna2Button6.Location = New Point(13, 520)
-        Guna2Button6.Margin = New Padding(3, 4, 3, 4)
+        Guna2Button6.Location = New Point(11, 390)
         Guna2Button6.Name = "Guna2Button6"
         Guna2Button6.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        Guna2Button6.Size = New Size(46, 60)
+        Guna2Button6.Size = New Size(40, 45)
         Guna2Button6.TabIndex = 6
         ' 
         ' Guna2Button5
@@ -319,11 +311,10 @@ Partial Class Form3
         Guna2Button5.ForeColor = Color.White
         Guna2Button5.Image = My.Resources.Resources.icons8_logout_50
         Guna2Button5.ImageSize = New Size(25, 25)
-        Guna2Button5.Location = New Point(11, 588)
-        Guna2Button5.Margin = New Padding(3, 4, 3, 4)
+        Guna2Button5.Location = New Point(10, 441)
         Guna2Button5.Name = "Guna2Button5"
         Guna2Button5.ShadowDecoration.CustomizableEdges = CustomizableEdges8
-        Guna2Button5.Size = New Size(46, 60)
+        Guna2Button5.Size = New Size(40, 45)
         Guna2Button5.TabIndex = 5
         ' 
         ' Guna2Button4
@@ -339,11 +330,10 @@ Partial Class Form3
         Guna2Button4.ForeColor = Color.White
         Guna2Button4.Image = My.Resources.Resources.icons8_case_32
         Guna2Button4.ImageSize = New Size(25, 25)
-        Guna2Button4.Location = New Point(11, 304)
-        Guna2Button4.Margin = New Padding(3, 4, 3, 4)
+        Guna2Button4.Location = New Point(10, 228)
         Guna2Button4.Name = "Guna2Button4"
         Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges10
-        Guna2Button4.Size = New Size(46, 60)
+        Guna2Button4.Size = New Size(40, 45)
         Guna2Button4.TabIndex = 4
         ' 
         ' Guna2Button2
@@ -359,11 +349,10 @@ Partial Class Form3
         Guna2Button2.ForeColor = Color.White
         Guna2Button2.Image = My.Resources.Resources.icons8_user_50
         Guna2Button2.ImageSize = New Size(25, 25)
-        Guna2Button2.Location = New Point(11, 242)
-        Guna2Button2.Margin = New Padding(3, 4, 3, 4)
+        Guna2Button2.Location = New Point(10, 182)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges12
-        Guna2Button2.Size = New Size(46, 60)
+        Guna2Button2.Size = New Size(40, 45)
         Guna2Button2.TabIndex = 2
         ' 
         ' Guna2Button1
@@ -379,11 +368,10 @@ Partial Class Form3
         Guna2Button1.ForeColor = Color.White
         Guna2Button1.Image = My.Resources.Resources.icons8_detective_64
         Guna2Button1.ImageSize = New Size(30, 30)
-        Guna2Button1.Location = New Point(11, 16)
-        Guna2Button1.Margin = New Padding(3, 4, 3, 4)
+        Guna2Button1.Location = New Point(10, 12)
         Guna2Button1.Name = "Guna2Button1"
         Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges14
-        Guna2Button1.Size = New Size(46, 60)
+        Guna2Button1.Size = New Size(40, 45)
         Guna2Button1.TabIndex = 1
         ' 
         ' Guna2GroupBox3
@@ -396,11 +384,10 @@ Partial Class Form3
         Guna2GroupBox3.CustomizableEdges = CustomizableEdges3
         Guna2GroupBox3.Font = New Font("Segoe UI", 9F)
         Guna2GroupBox3.ForeColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
-        Guna2GroupBox3.Location = New Point(549, 15)
-        Guna2GroupBox3.Margin = New Padding(3, 4, 3, 4)
+        Guna2GroupBox3.Location = New Point(480, 11)
         Guna2GroupBox3.Name = "Guna2GroupBox3"
         Guna2GroupBox3.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2GroupBox3.Size = New Size(463, 654)
+        Guna2GroupBox3.Size = New Size(405, 490)
         Guna2GroupBox3.TabIndex = 20
         ' 
         ' Guna2DataGridView1
@@ -426,8 +413,7 @@ Partial Class Form3
         DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
         Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Guna2DataGridView1.GridColor = Color.FromArgb(CByte(231), CByte(229), CByte(255))
-        Guna2DataGridView1.Location = New Point(30, 54)
-        Guna2DataGridView1.Margin = New Padding(3, 4, 3, 4)
+        Guna2DataGridView1.Location = New Point(26, 40)
         Guna2DataGridView1.Name = "Guna2DataGridView1"
         DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = SystemColors.Control
@@ -439,8 +425,7 @@ Partial Class Form3
         Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Guna2DataGridView1.RowHeadersVisible = False
         Guna2DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Guna2DataGridView1.RowTemplate.Height = 25
-        Guna2DataGridView1.Size = New Size(402, 307)
+        Guna2DataGridView1.Size = New Size(352, 230)
         Guna2DataGridView1.TabIndex = 11
         Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White
         Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -478,24 +463,22 @@ Partial Class Form3
         Guna2GradientButton2.Font = New Font("Segoe UI", 9F)
         Guna2GradientButton2.ForeColor = Color.White
         Guna2GradientButton2.GradientMode = Drawing2D.LinearGradientMode.ForwardDiagonal
-        Guna2GradientButton2.Location = New Point(83, 542)
-        Guna2GradientButton2.Margin = New Padding(3, 4, 3, 4)
+        Guna2GradientButton2.Location = New Point(73, 406)
         Guna2GradientButton2.Name = "Guna2GradientButton2"
         Guna2GradientButton2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2GradientButton2.Size = New Size(302, 53)
+        Guna2GradientButton2.Size = New Size(264, 40)
         Guna2GradientButton2.TabIndex = 10
         Guna2GradientButton2.Text = "Continue to Payment"
         ' 
         ' Form3
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1029, 687)
+        ClientSize = New Size(900, 515)
         Controls.Add(Guna2GroupBox3)
         Controls.Add(Guna2GroupBox1)
         Controls.Add(Guna2GroupBox2)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(3, 4, 3, 4)
         Name = "Form3"
         Text = "Form3"
         Guna2GroupBox2.ResumeLayout(False)
