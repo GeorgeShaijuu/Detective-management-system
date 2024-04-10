@@ -119,7 +119,9 @@ Public Class Form2
         Dim connectionString As String = "server=localhost; user=root; password=admin; database=dam;"
 
         ' SQL query to select data from the report table
-        Dim query As String = "SELECT * FROM report"
+        Dim reportQuery As String = "SELECT * FROM report"
+        ' SQL query to select data from the payments table
+        Dim paymentQuery As String = "SELECT * FROM payments"
 
         ' Variable to hold the message that will be displayed in the message box
         Dim message As String = "Report Table Data:" & Environment.NewLine
@@ -128,27 +130,49 @@ Public Class Form2
             ' Open the connection to the database
             connection.Open()
 
-            ' Create a new command with the query and connection
-            Using command As New MySqlCommand(query, connection)
-                ' Execute the query and obtain a reader to read the results
-                Using reader As MySqlDataReader = command.ExecuteReader()
-                    ' Check if there are rows
-                    If reader.HasRows Then
-                        ' Loop through all the rows
-                        While reader.Read()
+            ' Create a new command with the report query and connection
+            Using reportCommand As New MySqlCommand(reportQuery, connection)
+                ' Execute the report query and obtain a reader to read the results
+                Using reportReader As MySqlDataReader = reportCommand.ExecuteReader()
+                    ' Check if there are rows in the report table
+                    If reportReader.HasRows Then
+                        ' Loop through all the rows in the report table
+                        While reportReader.Read()
                             ' Append each row's data to the message
                             ' Assuming the report table has columns caseid, client_id, decid
                             ' Adjust the column names as per your actual table structure
-                            message &= $"Case ID: {reader("caseid")}, Client ID: {reader("client_id")}, Detective ID: {reader("decid")}" & Environment.NewLine
+                            message &= $"Case ID: {reportReader("caseid")}, Client ID: {reportReader("client_id")}, Detective ID: {reportReader("decid")}" & Environment.NewLine
                         End While
                     Else
-                        message = "No data found in the report table."
+                        message &= "No data found in the report table." & Environment.NewLine
+                    End If
+                End Using
+            End Using
+
+            ' Append a separator between the report and payment table data
+            message &= Environment.NewLine & "Payment Table Data:" & Environment.NewLine
+
+            ' Create a new command with the payment query and connection
+            Using paymentCommand As New MySqlCommand(paymentQuery, connection)
+                ' Execute the payment query and obtain a reader to read the results
+                Using paymentReader As MySqlDataReader = paymentCommand.ExecuteReader()
+                    ' Check if there are rows in the payment table
+                    If paymentReader.HasRows Then
+                        ' Loop through all the rows in the payment table
+                        While paymentReader.Read()
+                            ' Append each row's data to the message
+                            ' Assuming the payments table has columns caseid, paymethod, payamt
+                            ' Adjust the column names as per your actual table structure
+                            message &= $"Case ID: {paymentReader("caseid")}, Payment Method: {paymentReader("paymethod")}, Payment Amount: {paymentReader("payamt")}" & Environment.NewLine
+                        End While
+                    Else
+                        message &= "No data found in the payment table." & Environment.NewLine
                     End If
                 End Using
             End Using
         End Using
 
-        ' Show the message box with the data
-        MessageBox.Show(message)
+        ' Display the combined message in a message box
+        MessageBox.Show(message, "Report and Payment Data", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

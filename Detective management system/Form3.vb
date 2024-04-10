@@ -15,9 +15,21 @@ Public Class Form3
         Guna2ComboBox2.Items.Add("Cybercrime")
         Guna2ComboBox2.Items.Add("Fraud Investigation")
         Guna2ComboBox4.Items.Add("Active")
-        Guna2ComboBox4.Items.Add("Inactive")
+        Guna2ComboBox4.Items.Add("Not Active")
+        LoadPaymentMethods() ' This is the new line you'll add
         ' Add event handler to Guna2ComboBox2 selection change
         AddHandler Guna2ComboBox2.SelectedIndexChanged, AddressOf LoadDetectiveNames
+    End Sub
+
+    Private Sub LoadPaymentMethods()
+        ' Clear existing items
+        Guna2ComboBox5.Items.Clear()
+
+        ' Add payment method options to Guna2ComboBox5
+        Guna2ComboBox5.Items.Add("Cash")
+        Guna2ComboBox5.Items.Add("Credit Card")
+        Guna2ComboBox5.Items.Add("Bank Transfer")
+        Guna2ComboBox5.Items.Add("Online Payment")
     End Sub
 
     Private Sub LoadClientIDs()
@@ -158,23 +170,6 @@ Public Class Form3
         End Using
     End Sub
 
-    Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
-        ' Make sure a row is selected in the DataGridView
-        If Guna2DataGridView1.SelectedRows.Count = 0 Then
-            MessageBox.Show("Please select a case from the list.")
-            Return
-        End If
-
-        ' Assuming caseid is in the first column of the DataGridView
-        Dim selectedRow As DataGridViewRow = Guna2DataGridView1.SelectedRows(0)
-        ' Assuming caseid is in the first column of the DataGridView
-        Dim caseid As Integer = Convert.ToInt32(selectedRow.Cells("clientID").Value)
-        Dim client_id As Integer = Convert.ToInt32(selectedRow.Cells("clientID").Value)
-        Dim decid As Integer = Convert.ToInt32(selectedRow.Cells("detectiveID").Value)
-
-        ' Insert into booking table
-        InsertIntoBooking(caseid, client_id, decid)
-    End Sub
 
     Private Sub InsertIntoBooking(caseid As Integer, client_id As Integer, decid As Integer)
         ' Your connection string
@@ -201,6 +196,61 @@ Public Class Form3
 
         MessageBox.Show("Booking added successfully.")
     End Sub
+    Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
+        ' Make sure a row is selected in the DataGridView
+        If Guna2DataGridView1.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a case from the list.")
+            Return
+        End If
+
+        ' Retrieve information from the selected row in the DataGridView
+        Dim selectedRow As DataGridViewRow = Guna2DataGridView1.SelectedRows(0)
+        Dim caseid As Integer = Convert.ToInt32(selectedRow.Cells("caseid").Value) ' Adjust the column name if necessary
+        Dim client_id As Integer = Convert.ToInt32(selectedRow.Cells("clientID").Value) ' Assuming clientID is available
+        Dim decid As Integer = Convert.ToInt32(selectedRow.Cells("detectiveID").Value) ' Assuming detectiveID is available
+
+        ' Insert into booking table (assumes implementation of InsertIntoBooking method)
+        InsertIntoBooking(caseid, client_id, decid)
+
+        ' Retrieve payment method and amount from the form
+        Dim paymethod As String = If(Guna2ComboBox5.SelectedItem IsNot Nothing, Guna2ComboBox5.SelectedItem.ToString(), "")
+        Dim payamt As Decimal
+        If Not Decimal.TryParse(Guna2TextBox1.Text, payamt) Then
+            MessageBox.Show("Invalid payment amount.")
+            Return
+        End If
+        If InsertPaymentData(caseid, paymethod, payamt) Then
+            MessageBox.Show("Payment data added successfully.")
+        Else
+            MessageBox.Show("Failed to add payment data.")
+        End If
+    End Sub
+
+
+    Private Function InsertPaymentData(caseid As Integer, paymethod As String, payamt As Decimal) As Boolean
+        Try
+            Using connection As New MySqlConnection(connectionString)
+                connection.Open()
+
+                ' Prepare SQL command to insert payment data
+                Dim query As String = "INSERT INTO payments (caseid, paymethod, payamt) VALUES (@caseid, @paymethod, @payamt)"
+                Using cmd As New MySqlCommand(query, connection)
+                    ' Add parameters with values
+                    cmd.Parameters.AddWithValue("@caseid", caseid)
+                    cmd.Parameters.AddWithValue("@paymethod", paymethod)
+                    cmd.Parameters.AddWithValue("@payamt", payamt)
+
+                    ' Execute the command
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+
+            Return True ' Return true if insertion was successful
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+            Return False ' Return false if an exception occurred
+        End Try
+    End Function
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Guna2GroupBox2.Visible = True
