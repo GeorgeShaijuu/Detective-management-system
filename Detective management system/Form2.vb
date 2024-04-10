@@ -2,7 +2,22 @@
 
 Public Class Form2
     Private connectionString As String = "server=localhost;user=root;password=admin;database=dam;"
+    Private Function IsValidName(name As String) As Boolean
+        Return System.Text.RegularExpressions.Regex.IsMatch(name, "^[A-Za-z ]+$")
+    End Function
 
+    Private Function IsValidPhoneNumber(number As String) As Boolean
+        Return System.Text.RegularExpressions.Regex.IsMatch(number, "^\d{10}$")
+    End Function
+
+    Private Function IsValidEmail(email As String) As Boolean
+        Try
+            Dim mail = New System.Net.Mail.MailAddress(email)
+            Return mail.Address = email
+        Catch
+            Return False
+        End Try
+    End Function
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ComboBox1.Items.Add("Surveillance")
         Guna2ComboBox1.Items.Add("Cybercrime")
@@ -20,6 +35,20 @@ Public Class Form2
         Guna2GroupBox3.Visible = True
     End Sub
     Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
+        If Not IsValidName(Guna2TextBox1.Text) Then
+            MessageBox.Show("Please enter a valid name.")
+            Return
+        End If
+
+        If Not IsValidPhoneNumber(Guna2TextBox2.Text) Then
+            MessageBox.Show("Please enter a valid 10-digit phone number.")
+            Return
+        End If
+
+        If Not IsValidEmail(Guna2TextBox3.Text) Then
+            MessageBox.Show("Please enter a valid email address.")
+            Return
+        End If
         ' Retrieve data from textboxes
         Dim fullname As String = Guna2TextBox1.Text
         Dim contactNo As String = Guna2TextBox2.Text
@@ -32,6 +61,7 @@ Public Class Form2
         Else
             MessageBox.Show("Failed to add client data.")
         End If
+
     End Sub
 
     Private Function InsertClientData(fullname As String, contactNo As String, email As String, address As String) As Boolean
@@ -65,6 +95,20 @@ Public Class Form2
         End Try
     End Function
     Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
+        If Not IsValidName(Guna2TextBox8.Text) Then
+            MessageBox.Show("Please enter a valid name.")
+            Return
+        End If
+
+        If Not IsValidPhoneNumber(Guna2TextBox7.Text) Then
+            MessageBox.Show("Please enter a valid 10-digit phone number.")
+            Return
+        End If
+
+        If Not IsValidEmail(Guna2TextBox6.Text) Then
+            MessageBox.Show("Please enter a valid email address.")
+            Return
+        End If
         ' Retrieve data from textboxes and combobox
         Dim name As String = Guna2TextBox8.Text
         Dim contactNo As String = Guna2TextBox7.Text
@@ -77,6 +121,7 @@ Public Class Form2
         Else
             MessageBox.Show("Failed to add detective data.")
         End If
+
     End Sub
 
     Private Function InsertDetectiveData(name As String, contactNo As String, email As String, specialization As String) As Boolean
@@ -175,4 +220,5 @@ Public Class Form2
         ' Display the combined message in a message box
         MessageBox.Show(message, "Report and Payment Data", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
 End Class
