@@ -197,6 +197,7 @@ Public Class Form3
         MessageBox.Show("Booking added successfully.")
     End Sub
     Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
+
         ' Make sure a row is selected in the DataGridView
         If Guna2DataGridView1.SelectedRows.Count = 0 Then
             MessageBox.Show("Please select a case from the list.")
@@ -210,7 +211,7 @@ Public Class Form3
         Dim decid As Integer = Convert.ToInt32(selectedRow.Cells("detectiveID").Value) ' Assuming detectiveID is available
 
         ' Insert into booking table (assumes implementation of InsertIntoBooking method)
-        InsertIntoBooking(caseid, client_id, decid)
+
 
         ' Retrieve payment method and amount from the form
         Dim paymethod As String = If(Guna2ComboBox5.SelectedItem IsNot Nothing, Guna2ComboBox5.SelectedItem.ToString(), "")
@@ -224,6 +225,7 @@ Public Class Form3
         Else
             MessageBox.Show("Failed to add payment data.")
         End If
+        InsertIntoBooking(caseid, client_id, decid)
     End Sub
 
 

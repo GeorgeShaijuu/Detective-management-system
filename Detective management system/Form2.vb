@@ -11,13 +11,11 @@ Public Class Form2
     End Function
 
     Private Function IsValidEmail(email As String) As Boolean
-        Try
-            Dim mail = New System.Net.Mail.MailAddress(email)
-            Return mail.Address = email
-        Catch
-            Return False
-        End Try
+        Dim pattern As String = "^\S+@\S+\.\S+$"
+        Dim regex As New System.Text.RegularExpressions.Regex(pattern)
+        Return regex.IsMatch(email)
     End Function
+
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ComboBox1.Items.Add("Surveillance")
         Guna2ComboBox1.Items.Add("Cybercrime")
